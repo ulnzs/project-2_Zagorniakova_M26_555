@@ -9,6 +9,7 @@ from primitive_db.constants import (
     APP_TITLE,
     COMMAND_PROMPT,
     HELP_LINES,
+    ID_COLUMN,
     META_FILE,
 )
 from primitive_db.core import (
@@ -126,7 +127,7 @@ def _handle_update(metadata, command_line):
 
     original_data = load_table_data(table_name)
     matching_ids = [
-        record.get("ID")
+        record.get(ID_COLUMN)
         for record in original_data
         if all(
             record.get(column) == value
@@ -162,7 +163,7 @@ def _handle_delete(metadata, command_line):
     table_data = load_table_data(table_name)
     where_clause = parse_where_clause(where_text)
     removed_ids = [
-        record.get("ID")
+        record.get(ID_COLUMN)
         for record in table_data
         if all(
             record.get(column) == value for column, value in where_clause.items()
