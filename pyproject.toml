@@ -1,0 +1,45 @@
+[project]
+name = "primitive_db"
+version = "0.1.0"
+description = "Учебная консольная база данных на Python"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Student" },
+]
+dependencies = [
+    "prettytable>=3.10.0",
+    "prompt>=0.4.1",
+]
+
+[project.scripts]
+database = "primitive_db.main:main"
+project = "primitive_db.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = [
+    "venv",
+    ".venv",
+    ".uv-cache",
+    ".uv-tools",
+    ".uv-bin",
+    ".tmp",
+    "dist",
+    "__pycache__",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+

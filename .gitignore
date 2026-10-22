@@ -1,0 +1,13 @@
+.venv/
+dist/
+__pycache__/
+*.egg-info/
+.ruff_cache/
+.uv-cache/
+.uv-tools/
+.uv-bin/
+.tmp/
+data/
+db_meta.json
+*.cast
+
