@@ -25,6 +25,13 @@ uv sync
 uv run database
 ```
 
+Те же действия доступны через `make`:
+
+```bash
+make install
+make run
+```
+
 Для совместимости с первой частью задания доступна также команда:
 
 ```bash
@@ -59,6 +66,10 @@ exit
 ## Проверка качества и сборка
 
 ```bash
+make lint
+make build
+
+# Эквивалентные команды uv
 uv run ruff check .
 uv build
 uvx twine check dist/*
@@ -66,14 +77,8 @@ uvx twine check dist/*
 
 ## Демонстрация asciinema
 
-Финальную запись следует сделать после указания личных данных и размещения
-проекта в учебном репозитории:
+Запись показывает полный сценарий работы: запуск приложения, создание таблицы,
+`insert`, `select`, `update`, подтверждение `delete`, `info`, подтверждение
+`drop_table` и завершение программы.
 
-```bash
-asciinema rec primitive-db.cast
-uv run database
-```
-
-Запись должна показать создание таблицы, `insert`, `select`, `update`,
-подтверждение `delete`, `info` и подтверждение `drop_table`. После публикации
-ссылку на запись нужно добавить в этот раздел README.
+[![asciicast](https://asciinema.org/a/1vL1Pr6swxOyUDzq.svg)](https://asciinema.org/a/1vL1Pr6swxOyUDzq)
