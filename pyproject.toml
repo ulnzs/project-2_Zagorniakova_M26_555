@@ -5,7 +5,7 @@ description = "Учебная консольная база данных на Py
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
-    { name = "Student" },
+    { name = "ulnzs", email = "248959128+ulnzs@users.noreply.github.com" },
 ]
 dependencies = [
     "prettytable>=3.10.0",
